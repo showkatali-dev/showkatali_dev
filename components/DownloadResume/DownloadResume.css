@@ -1,0 +1,107 @@
+.button {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 100px;
+  height: 30px;
+  width: 100%;
+  line-height: 30px;
+  font-family: "Helvetica";
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  @apply border-l-2 border-accent/80;
+}
+
+.button span {
+  position: absolute;
+  transition: all 200ms ease-in-out;
+  background: linear-gradient(
+      95deg,
+      #059dff 15%,
+      #6549d5 45%,
+      #e33fa1 75%,
+      #fb5343
+    )
+    95%/200% 100%;
+  opacity: 0.8;
+}
+
+.button span.line-1 {
+  top: 0;
+  left: 0;
+  width: 193px;
+  height: 2px;
+  transform: translateX(-48px);
+}
+.button span.line-2 {
+  bottom: 0;
+  right: 0;
+  width: 165px;
+  height: 2px;
+  transform: translateX(-25px);
+}
+.button span.line-3 {
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 2px;
+  transform: translateX(20px);
+}
+.button span.line-4 {
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 2px;
+  transform: translateX(95px);
+}
+.button span.line-5 {
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  height: 50px;
+  transform: translateY(0px);
+}
+.button span.line-6 {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 8px;
+  transform: translateY(-48px);
+}
+
+.button:hover span.line-1 {
+  transform: translateX(0px);
+}
+.button:hover span.line-2 {
+  transform: translateX(-65px);
+}
+.button:hover span.line-3 {
+  transform: translateX(60px);
+}
+.button:hover span.line-4 {
+  transform: translateX(55px);
+}
+.button:hover span.line-5 {
+  transform: translateY(44px);
+}
+.button:hover span.line-6 {
+  transform: translateY(-2px);
+}
+
+.button p {
+  background-size: 200%;
+  animation: custom 3s linear infinite;
+}
+
+@keyframes custom {
+  0%,
+  100% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+}
