@@ -1,25 +1,20 @@
 "use client";
 
-import { useState } from "react";
 import { FaEye, FaGithub } from "react-icons/fa";
 import { Project } from "@/types/Project.type";
 import Image from "next/image";
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const { name, image, description, technologies, github, live } = project;
-  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div
-      className="card rounded-lg shadow-md shadow-primary/40 hover:shadow-xl hover:shadow-primary/40 overflow-hidden bg-base-100/50"
+      className="card rounded-lg shadow-md shadow-primary/40 hover:shadow-xl hover:shadow-primary/40 overflow-hidden bg-base-100/50 group"
       data-aos="fade-up"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative w-full h-60 overflow-hidden">
         <div
-          className={`h-max transition-transform duration-700 hover:duration-[3000ms] ease-linear transform ${
-            isHovered ? "-translate-y-[calc(100%-15rem)]" : "translate-y-0"
-          }`}
+          className={`h-max transition-transform duration-700 hover:duration-[3000ms] ease-linear transform translate-y-0 group-hover:-translate-y-[calc(100%-15rem)]`}
         >
           <Image
             src={image}
@@ -36,11 +31,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </h2>
         <p>{description}</p>
         <div
-          className={`absolute inset-0 bg-base-300 transition duration-500 p-2 ${
-            isHovered
-              ? "translate-y-0 opacity-100"
-              : "translate-y-full opacity-0"
-          }`}
+          className={`absolute inset-0 bg-base-300 transition duration-500 p-2 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100`}
         >
           <p className="mb-2 text-sm">
             <span className="font-semibold text-secondary">Technologies:</span>{" "}
