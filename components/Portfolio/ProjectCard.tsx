@@ -23,8 +23,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
         >
           <Image
             src={image}
-            width={448}
-            height={2600}
+            width={320}
+            height={600}
             alt={name}
             className="object-cover object-top w-full"
           />
